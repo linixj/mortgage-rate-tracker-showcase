@@ -9,7 +9,7 @@ import os
 load_dotenv()
 
 URL = "https://www.chase.com/personal/mortgage/mortgage-rates"
-ZIP_CODE = "98033"
+ZIP_CODE = os.getenv("ZIP_CODE", "98101")
 SHEET_NAME = os.getenv("SHEET_NAME", "Greater Seattle Mortgage Rate Tracker")
 
 COLUMNS = [
