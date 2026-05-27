@@ -1,0 +1,48 @@
+name: Daily Mortgage Rate Tracker
+
+# on:
+#   schedule:
+#   workflow_dispatch:
+
+jobs:
+  update-rates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install pandas pygsheets requests beautifulsoup4 lxml python-dotenv certifi playwright
+          python -m playwright install chromium
+
+      - name: Create credentials.json
+        run: |
+          echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credentials.json
+
+
+      - name: Run benchmark rates
+        run: python backfill_fred_rates.py
+        env:
+          SHEET_NAME: ${{ secrets.SHEET_NAME }}
+
+      - name: Run BECU rates
+        run: python scrape_becu_rates.py
+        env:
+          SHEET_NAME: ${{ secrets.SHEET_NAME }}
+
+
+      - name: Run Chase purchase rates
+        run: python scrape_chase_purchase_rates.py
+        env:
+          SHEET_NAME: ${{ secrets.SHEET_NAME }}
+
+
+
+
