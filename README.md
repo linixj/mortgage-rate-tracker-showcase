@@ -75,6 +75,7 @@ Looker Studio Dashboard / Historical Analysis
 
 ### Pipeline Output
 
+This screenshot shows the weekly market mortgage rate.
 
 <img src="screenshots/freddie_mac_rates_data.png" alt="FRED mortgage rate data" width="800">
 
