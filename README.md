@@ -57,6 +57,8 @@ Structured DataFrame
 Google Sheets Storage
    |
 Looker Studio Dashboard / Historical Analysis
+```
+---
 
 ## Tech Stack
 - Python — core scripting and data processing
@@ -66,6 +68,8 @@ Looker Studio Dashboard / Historical Analysis
 - pygsheets — Google Sheets integration
 - GitHub Actions — scheduled automation
 - Looker Studio — dashboard-ready reporting layer
+
+---
 
 ## Demo / Screenshots
 
