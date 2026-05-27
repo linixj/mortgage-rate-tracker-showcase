@@ -91,11 +91,10 @@ This screenshot shows the dashboard-ready rate tracking view for lender comparis
 <img src="screenshots/mortgage_rates.png" alt="Mortgage rate dashboard preview" width="800">
 
 ## Future Improvements
-Add retry and fallback logic for failed lender pages
-Add data quality checks before appending rows
-Add alerting when rates change beyond a configured threshold
-Add more lender sources
-Move parsing rules into a configuration layer
-Add unit tests for parser functions
-Add a small dashboard screenshot or sample Looker Studio view
-Add CI validation for scraper output schema
+- Add retry and fallback logic for failed lender pages
+- Add data quality checks before appending rows
+- Add alerting when rates change beyond a configured threshold
+- Add more lender sources
+- Move parsing rules into a configuration layer
+- Add unit tests for parser functions
+- Add CI validation for scraper output schema
