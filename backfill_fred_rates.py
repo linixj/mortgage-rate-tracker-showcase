@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 import requests
 import certifi
 from io import StringIO
+import time
 
 load_dotenv()
 
@@ -41,7 +42,7 @@ def get_fred_csv(series_id):
 
     last_error = None
 
-    for attempt in range(3):
+    for attempt in range(5):
 
         try:
             response = requests.get(
@@ -74,7 +75,7 @@ def get_fred_csv(series_id):
 
             print(e)
 
-            time.sleep(10)
+            time.sleep(20)
 
     raise last_error
 
